@@ -33,6 +33,7 @@ jobs:
             echo "Tests réussis"
           else
             echo "Tests échoués"; exit 1
+          fi
 
   lint:
     runs-on: ubuntu-latest
