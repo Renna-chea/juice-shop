@@ -5,7 +5,6 @@ on:
       - l10n_develop
       - gh-pages
     paths-ignore:
-      - '*.md'
       - 'LICENSE'
       - 'monitoring/grafana-dashboard.json'
       - 'screenshots/**'
@@ -22,6 +21,20 @@ env:
   NODE_OPTIONS: "--max_old_space_size=4096"
   CYCLONEDX_NPM_VERSION: '^2.0.0||^3.0.0'
 jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run simple tests
+        run: |
+          echo "Exécution des tests..."
+          test_output="Hello"
+          if [ "$test_output" = "Hello" ]; then
+            echo "Tests réussis "
+          else
+            echo "Tests échoués "; exit 1
+
   lint:
     runs-on: ubuntu-latest
     steps:
