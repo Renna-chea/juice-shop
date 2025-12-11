@@ -12,7 +12,6 @@ on:
       - '*'
   pull_request:
     paths-ignore:
-      - '*.md'
       - 'LICENSE'
       - 'data/static/i18n/*.json'
       - 'frontend/src/assets/i18n/*.json'
@@ -31,9 +30,9 @@ jobs:
           echo "Exécution des tests..."
           test_output="Hello"
           if [ "$test_output" = "Hello" ]; then
-            echo "Tests réussis "
+            echo "Tests réussis"
           else
-            echo "Tests échoués "; exit 1
+            echo "Tests échoués"; exit 1
 
   lint:
     runs-on: ubuntu-latest
